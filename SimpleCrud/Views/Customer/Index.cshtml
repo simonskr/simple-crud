@@ -2,9 +2,11 @@
 
 @foreach (var customer in Model)
 {
-    <div>
-        <h3>@customer.Name @customer.Surname</h3>
-        @customer.Address<br />
-        @customer.PhoneNumber
+    <div class="card">
+        <div class="card-block">
+            <h3 class="card-title">@customer.Name @customer.Surname</h3>
+            <p class="card-text">@customer.Address</p>
+            <p class="card-text">@customer.PhoneNumber</p>
+        </div>
     </div>
 }
