@@ -29,6 +29,8 @@ namespace SimpleCrud
         public void ConfigureServices(IServiceCollection services)
         {
             services.Compose(Configuration);
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,10 +42,12 @@ namespace SimpleCrud
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
+            app.UseStatusCodePages();
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Customer}/{action=Index}");
             });
         }
     }

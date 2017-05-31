@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using SimpleCrud.DAL;
 using SimpleCrud.BLL.Abstract;
+using SimpleCrud.BLL;
 
 namespace CompositionRoot
 {
@@ -14,6 +15,7 @@ namespace CompositionRoot
             services.AddEntityFrameworkDbContext(configuration["ConnectionString"]);
 
             services.AddTransient<ICustomerRepository, EFCustomerRepository>();
+            services.AddTransient<ICustomerService, CustomerService>();
         }
     }
 }
