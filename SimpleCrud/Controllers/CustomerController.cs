@@ -27,6 +27,10 @@ namespace SimpleCrud.Controllers
             return View("Edit", new Customer());
         }
 
+        [HttpGet]
+        public ViewResult Edit(int customerId) => 
+            View(customerService.GetCustomerWithId(customerId));
+
         [HttpPost]
         public IActionResult Edit(Customer customer)
         {

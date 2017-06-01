@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SimpleCrud.BLL.Models;
+using System.Linq;
 
 namespace SimpleCrud.BLL
 {
@@ -23,6 +24,11 @@ namespace SimpleCrud.BLL
         public IEnumerable<Customer> GetAllCustomers()
         {
             return customerRepository.Customers;
+        }
+
+        public Customer GetCustomerWithId(int customerId)
+        {
+            return customerRepository.Customers.FirstOrDefault(c => c.CustomerID == customerId);
         }
     }
 }

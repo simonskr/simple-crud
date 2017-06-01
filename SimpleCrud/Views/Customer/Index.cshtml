@@ -4,7 +4,12 @@
 {
     <div class="card">
         <div class="card-block">
-            <h3 class="card-title">@customer.Name @customer.Surname</h3>
+            <div class="float-right">
+                <form asp-action="Edit" class="btn btn-sm btn-warning">
+                    <a asp-action="Edit" asp-route-customerId="@customer.CustomerID" class="btn btn-sm btn-warning fa fa-pencil fa-2x" ></a>
+                </form>
+            </div>
+            <h3 class="card-title"><span class="fa fa-address-card"></span> @customer.Name @customer.Surname</h3>
             <p class="card-text">@customer.Address</p>
             <p class="card-text">@customer.PhoneNumber</p>
         </div>
