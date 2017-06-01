@@ -21,9 +21,13 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-light" role="navigation">
-            <a class="navbar-brand" href="#">Customer CRUD</a>
+        <nav class="navbar navbar-light bg-faded">
+            <a class="navbar-brand " href="#">
+                <span class="d-inline-block align-middle fa fa-tags fa-4x"></span>
+                <h1 class="d-inline-block align-middle">Customer CRUD</h1>
+            </a>
         </nav>
+
         @if (TempData["message"] != null)
         {
             <div class="alert alert-info alert-dismissible fade show" role="alert">
