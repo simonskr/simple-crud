@@ -15,6 +15,11 @@ namespace SimpleCrud.BLL
             this.customerRepository = customerRepository;
         }
 
+        public void SaveCustomer(Customer customer)
+        {
+            customerRepository.SaveCustomer(customer);
+        }
+
         public IEnumerable<Customer> GetAllCustomers()
         {
             return customerRepository.Customers;

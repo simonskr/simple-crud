@@ -8,5 +8,6 @@ namespace SimpleCrud.BLL.Abstract
     public interface ICustomerService
     {
         IEnumerable<Customer> GetAllCustomers();
+        void SaveCustomer(Customer customer);
     }
 }

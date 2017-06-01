@@ -30,6 +30,7 @@ namespace SimpleCrud
         {
             services.Compose(Configuration);
 
+            services.AddSession();
             services.AddMvc();
         }
 
@@ -44,6 +45,7 @@ namespace SimpleCrud
             }
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

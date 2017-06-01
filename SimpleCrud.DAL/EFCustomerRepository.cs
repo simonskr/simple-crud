@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SimpleCrud.BLL.Models;
+using System.Linq;
 
 namespace SimpleCrud.DAL
 {
@@ -16,5 +17,12 @@ namespace SimpleCrud.DAL
         }
 
         public IEnumerable<Customer> Customers => context.Customers;
+
+        public void SaveCustomer(Customer customer)
+        {
+            context.Customers.Add(customer);
+
+            context.SaveChanges();
+        }
     }
 }
