@@ -30,5 +30,10 @@ namespace SimpleCrud.BLL
         {
             return customerRepository.Customers.FirstOrDefault(c => c.CustomerID == customerId);
         }
+
+        public Customer DeleteCustomerWithId(int customerId)
+        {
+            return customerRepository.DeleteCustomerWithId(customerId);
+        }
     }
 }

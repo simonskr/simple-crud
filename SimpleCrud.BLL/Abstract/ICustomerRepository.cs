@@ -10,5 +10,6 @@ namespace SimpleCrud.BLL.Abstract
         IEnumerable<Customer> Customers { get; }
 
         void SaveCustomer(Customer customer);
+        Customer DeleteCustomerWithId(int customerId);
     }
 }

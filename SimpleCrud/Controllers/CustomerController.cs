@@ -43,5 +43,15 @@ namespace SimpleCrud.Controllers
             else
                 return View(customer);
         }
+
+        [HttpPost]
+        public IActionResult Delete(int customerId)
+        {
+            var customer = customerService.DeleteCustomerWithId(customerId);
+            if (customer != null)
+                TempData["message"] = $"{customer.Name} {customer.Surname} has been deleted";
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -5,8 +5,11 @@
     <div class="card">
         <div class="card-block">
             <div class="float-right">
-                <form asp-action="Edit" class="btn btn-sm btn-warning">
+                <form asp-action="Delete" method="post">
                     <a asp-action="Edit" asp-route-customerId="@customer.CustomerID" class="btn btn-sm btn-warning fa fa-pencil fa-2x" ></a>
+                    
+                    <input type="hidden" name="customerId" value="@customer.CustomerID" />
+                    <button type="submit" style="cursor: pointer" class="btn btn-danger btn-sm fa fa-trash fa-2x" ></button>
                 </form>
             </div>
             <h3 class="card-title"><span class="fa fa-address-card"></span> @customer.Name @customer.Surname</h3>

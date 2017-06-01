@@ -18,6 +18,19 @@ namespace SimpleCrud.DAL
 
         public IEnumerable<Customer> Customers => context.Customers;
 
+        public Customer DeleteCustomerWithId(int customerId)
+        {
+            var dbCustomer = context.Customers.FirstOrDefault(x => x.CustomerID == customerId);
+
+            if (dbCustomer != null)
+            {
+                context.Customers.Remove(dbCustomer);
+                context.SaveChanges();
+            }
+
+            return dbCustomer;
+        }
+
         public void SaveCustomer(Customer customer)
         {
             if (customer.CustomerID == 0)
